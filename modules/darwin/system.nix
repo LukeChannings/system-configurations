@@ -63,7 +63,15 @@
     system.defaults.dock.show-process-indicators = false;
     system.defaults.dock.static-only = true;
     system.defaults.dock.tilesize = 32;
-    system.defaults.CustomUserPreferences."com.apple.dock" = { "mru-spaces" = false; };
+    system.defaults.CustomUserPreferences."com.apple.dock" = {
+      "mru-spaces" = false;
+      "show-recents" = false;
+    };
+
+    system.defaults.CustomUserPreferences."com.apple.WindowManager" = {
+      GloballyEnabled = true;
+      GloballyEnabledEver = true;
+    };
 
     ## Finder
     system.defaults.finder.AppleShowAllFiles = false;

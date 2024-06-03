@@ -44,7 +44,10 @@
 
       # Global configuration for my systems
       globals = {
+        user = "luke";
         fullName = "Luke Channings";
+        gitEmail = "461449+LukeChannings@users.noreply.github.com";
+        gitSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqR3Ps3fG4IEgoKiJnBdGW6IGoTcUrp/m5Ol4MUGEXP";
       };
 
       overlays = import ./packages/overlays.nix { inherit inputs globals; };
