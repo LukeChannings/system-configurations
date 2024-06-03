@@ -1,0 +1,32 @@
+{
+  "editor.fontSize": 16,
+  "explorer.confirmDelete": false,
+  "editor.rulers": [
+      120
+  ],
+  "editor.multiCursorModifier": "ctrlCmd",
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "editor.suggestSelection": "first",
+  "editor.fontFamily": "RecMonoLinear-Regular",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "notebook.markup.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "editor.renderWhitespace": "all",
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.inlineSuggest.enabled": true,
+  "redhat.telemetry.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.snippetSuggestions": "bottom",
+  "extensions.ignoreRecommendations": true,
+  "cSpell.language": "en,en-GB",
+  "workbench.startupEditor": "none",
+  "window.commandCenter": false,
+  "terminal.integrated.shellIntegration.enabled": false,
+  "workbench.editor.empty.hint": "hidden",
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "nix.enableLanguageServer": true,
+  "extensions.experimental.supportWorkspaceExtensions": true,
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  }
+}
