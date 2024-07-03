@@ -14,6 +14,7 @@
         };
 
         extraConfig = {
+          pull.rebase = true;
           rebase.autostash = true;
           push.autosetupremote = true;
         };
