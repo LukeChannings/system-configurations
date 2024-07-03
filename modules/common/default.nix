@@ -12,31 +12,44 @@
     ./fonts
   ];
 
-  options = {
-    user = lib.mkOption {
-      type = lib.types.str;
+  options = with lib; {
+    user = mkOption {
+      type = types.str;
       description = "The user name for the primary user";
     };
 
-    fullName = lib.mkOption {
-      type = lib.types.str;
+    userId = mkOption {
+      type = types.int;
+      description = "The id for the primary user";
+      default = 501;
+    };
+
+    fullName = mkOption {
+      type = types.str;
       description = "A human readable name for the user";
     };
 
-    homePath = lib.mkOption {
-      type = lib.types.path;
+    homePath = mkOption {
+      type = types.path;
       description = "Path of user's home directory.";
       default = builtins.toPath (
         if pkgs.stdenv.isDarwin then "/Users/${config.user}" else "/home/${config.user}"
       );
     };
 
-    gitEmail = lib.mkOption {
-      type = lib.types.str;
+    configurationPath = mkOption {
+      type = types.str;
+      description = "Path to clone of this configuration repo";
     };
 
-    gitSigningKey = lib.mkOption {
-      type = lib.types.str;
+    gitEmail = mkOption {
+      type = with types; nullOr str;
+      default = null;
+    };
+
+    gitSigningKey = mkOption {
+      type = with types; nullOr str;
+      default = null;
     };
   };
 

@@ -4,7 +4,7 @@
   inputs = {
 
     # Used for system packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -16,7 +16,7 @@
 
     # Used for user packages and dotfiles
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -44,10 +44,7 @@
 
       # Global configuration for my systems
       globals = {
-        user = "luke";
         fullName = "Luke Channings";
-        gitEmail = "461449+LukeChannings@users.noreply.github.com";
-        gitSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqR3Ps3fG4IEgoKiJnBdGW6IGoTcUrp/m5Ol4MUGEXP";
       };
 
       overlays = import ./packages/overlays.nix { inherit inputs globals; };
@@ -57,6 +54,7 @@
       # darwin-rebuild switch --flake .#Scimitar
       darwinConfigurations = {
         Scimitar = import ./systems/scimitar.nix { inherit inputs globals overlays; };
+        CAIS = import ./systems/cais.nix { inherit inputs globals overlays; };
       };
 
       # For quickly applying home-manager settings with:

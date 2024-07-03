@@ -34,14 +34,18 @@
         cloudflared
       ];
 
+      sessionVariables = {
+        # NIX_CONFIG = config.configurationPath;
+      };
+
       shellAliases = {
         ls = "lsd";
         mkcd = "mkdir -p $argv[1] && cd ";
         tree = "tree --noreport";
         rg = "ripgrep";
         edit = "$EDITOR .";
-        nixedit = "cd ~/.nix-config; $editor .";
-        rebuild = "darwin-rebuild switch --flake ~/.nix-config";
+        # edit-config = "$EDITOR ${config.configurationPath}";
+        # rebuild = "darwin-rebuild switch --flake ${config.configurationPath}";
       };
     };
   in {

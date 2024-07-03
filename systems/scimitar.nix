@@ -9,6 +9,12 @@ let
 
     system.stateVersion = 1;
 
+    user = "luke";
+    userId = 501;
+    configurationPath = "~/.nix-config";
+    gitEmail = "461449+LukeChannings@users.noreply.github.com";
+    gitSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqR3Ps3fG4IEgoKiJnBdGW6IGoTcUrp/m5Ol4MUGEXP";
+
     shell.defaultShell = "fish";
     shell.defaultEditor = "helix";
 
@@ -52,6 +58,16 @@ inputs.darwin.lib.darwinSystem {
         (import ../packages/overlays.nix { })
       ];
     }
+    ({ pkgs, ... }: {
+      config.apps.extra = with pkgs.brewCasks; [
+        telegram
+        plexamp
+        mqttx
+        anki
+        blender
+        audio-hijack
+      ];
+    })
     systemConfig
     ../modules/common
     ../modules/darwin

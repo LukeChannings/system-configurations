@@ -10,7 +10,7 @@
 
     users.users.${config.user} = {
       home = config.homePath;
-      uid = 501;
+      uid = config.userId;
     };
 
     users.users.root = {
@@ -23,36 +23,22 @@
         programs.home-manager.enable = true;
         home.packages =
           (with pkgs.brewCasks; [
+            arc
+            
+            utm
+            
+            raycast
+            postman
+            tableplus
+            bonjour-browser
+
+            swish
+            contexts
             hot
             suspicious-package
-            telegram
-            utm
-            apparency
-            plexamp
-            mqttx
-            raycast
-            the-unarchiver
-            postman
-            anki
-            blender
-            tableplus
-            swish
-            # doxie
-            contexts
-            arc
-            # betterdisplay
             monitorcontrol
-            bonjour-browser
-            # docker
-            # zoom
-
-            # Pro Apps
-            audio-hijack
-          ])
-          ++ (with pkgs; [
-            jetbrains.idea-ultimate
-            docker_26
-            zoom-us
+            the-unarchiver
+            apparency
           ]);
       }
     );

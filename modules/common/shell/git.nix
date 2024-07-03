@@ -10,7 +10,7 @@
         userEmail = config.gitEmail;
         signing = {
           key = config.gitSigningKey;
-          signByDefault = false;
+          signByDefault = config.gitSigningKey != null;
         };
 
         extraConfig = {

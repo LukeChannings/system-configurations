@@ -1,10 +1,15 @@
-{lib, ...}: {
+{lib, config, ...}: with lib; with types; {
   options = {
     apps = {
-      wezterm.enable = lib.mkEnableOption "WezTerm";
-      vim.enable = lib.mkEnableOption "vim";
-      helix.enable = lib.mkEnableOption "Helix editor";
-      vscode.enable = lib.mkEnableOption "Visual Studio Code";
+      wezterm.enable = mkEnableOption "WezTerm";
+      vim.enable = mkEnableOption "vim";
+      helix.enable = mkEnableOption "Helix editor";
+      vscode.enable = mkEnableOption "Visual Studio Code";
+      extra = mkOption {
+        type = listOf package;
+        description = "Additional apps to install";
+        default = [];
+      };
     };
   };
 
@@ -14,4 +19,8 @@
     ./helix
     ./vscode
   ];
+
+  config = {
+    home-manager.users.${config.user}.home.packages = config.apps.extra;
+  };
 }

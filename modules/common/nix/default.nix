@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   nix = {
     nixPath = [ "nixpkgs=${pkgs.path}" ];
@@ -11,7 +11,7 @@
     settings.experimental-features = ["nix-command" "flakes"];
     settings.warn-dirty = false;
 
-    settings.trusted-users = [ "root" "luke" ];
+    settings.trusted-users = [ "root" "${config.user}" ];
     settings.trusted-public-keys = [ "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" ];
     settings.extra-substituters = [
       "https://devenv.cachix.org"

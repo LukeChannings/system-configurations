@@ -59,7 +59,7 @@
     system.defaults.menuExtraClock.ShowDate = 0;
 
     ## Dock
-    system.defaults.dock.autohide = true;
+    system.defaults.dock.autohide = false;
     system.defaults.dock.show-process-indicators = false;
     system.defaults.dock.static-only = true;
     system.defaults.dock.tilesize = 32;
