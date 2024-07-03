@@ -79,14 +79,6 @@
           home.stateVersion = stateVersion;
 
           programs.home-manager.enable = true;
-
-          home.activation = {
-            setupDeveloperFolder = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-              run mkdir -p ${config.home.homeDirectory}/Developer
-              run ${lib.getExe pkgs.git} clone https://github.com/LukeChannings/system-configurations.git ${config.home.homeDirectory}/Developer/Configuration
-              run cd ${config.home.homeDirectory}/Developer/Configuration && git remote remove origin && git remote add origin git@github.com:LukeChannings/system-configurations.git
-            '';
-          };
         }
       );
     };

@@ -57,11 +57,11 @@
       # darwin-rebuild switch --flake .#Scimitar
       darwinConfigurations = {
         Scimitar = import ./systems/scimitar.nix { inherit inputs globals overlays; };
-        CAIS = import ./systems/cais.nix { inherit inputs globals overlays; };
+        C1-435-LCHA = import ./systems/C1-435-LCHA.nix { inherit inputs globals overlays; };
       };
 
       # For quickly applying home-manager settings with:
-      # home-manager switch --flake .#tempest
+      # home-manager switch --flake .#Scimitar
       homeConfigurations = {
         Scimitar = darwinConfigurations.Scimitar.config.home-manager.users.${globals.user}.home;
       };

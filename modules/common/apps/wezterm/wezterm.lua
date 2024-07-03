@@ -42,7 +42,7 @@ return {
   use_fancy_tab_bar = true,
   font = wezterm.font_with_fallback({
     {
-      family = "Recursive Mono Linear Static",
+      family = "RecMonoLinear Nerd Font Mono",
       weight = "Regular",
       style = "Normal",
       harfbuzz_features = { "calt=1", "clig=0", "liga=0" },

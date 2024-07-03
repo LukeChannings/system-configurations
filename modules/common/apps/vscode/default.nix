@@ -26,7 +26,7 @@
           mutableExtensionsDir = false;
 
           userSettings = {
-            "editor.fontFamily" = "Recursive Mn Lnr St";
+            "editor.fontFamily" = "RecMonoLinear Nerd Font";
             "editor.fontSize" = 16;
             "notebook.markup.fontSize" = 14;
             "terminal.integrated.fontSize" = 14;
