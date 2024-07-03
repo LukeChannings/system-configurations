@@ -34,6 +34,8 @@ let
       sshIntegration = true;
       gitSigningIntegration = true;
     };
+    shell.kubectl.enable = true;
+    shell.kubectl.k.enable = true;
 
     apps.wezterm.enable = true;
     apps.vim.enable = true;

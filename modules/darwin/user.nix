@@ -27,11 +27,12 @@
             
             utm
             
-            raycast
             postman
             tableplus
             bonjour-browser
 
+            raycast
+            maccy
             swish
             contexts
             hot

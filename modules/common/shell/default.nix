@@ -67,5 +67,6 @@
     ./direnv.nix
     ./ssh.nix
     ./htop.nix
+    ./kubectl.nix
   ];
 }
