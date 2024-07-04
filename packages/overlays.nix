@@ -6,6 +6,8 @@
 
   nix = super.nixVersions.nix_2_22;
 
+  chromium-macos = (self.callPackage ./development/chromium-macos {});
+
   brewCasks =
     let
       overrideHash = (
