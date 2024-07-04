@@ -34,6 +34,7 @@ let
       sshIntegration = true;
       gitSigningIntegration = true;
     };
+    shell.zoxide.enable = true;
 
     apps.wezterm.enable = true;
     apps.helix.enable = true;

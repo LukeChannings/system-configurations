@@ -68,5 +68,6 @@
     ./ssh.nix
     ./htop.nix
     ./kubectl.nix
+    ./zoxide.nix
   ];
 }
