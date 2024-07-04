@@ -18,6 +18,7 @@
     ./vim
     ./helix
     ./vscode
+    ./chromium
   ];
 
   config = {
