@@ -1,14 +1,13 @@
-{lib, config, ...}: with lib; with types; {
+{ lib, config, ... }:
+with lib;
+with types;
+{
   options = {
     apps = {
-      wezterm.enable = mkEnableOption "WezTerm";
-      vim.enable = mkEnableOption "vim";
-      helix.enable = mkEnableOption "Helix editor";
-      vscode.enable = mkEnableOption "Visual Studio Code";
       extra = mkOption {
         type = listOf package;
         description = "Additional apps to install";
-        default = [];
+        default = [ ];
       };
     };
   };

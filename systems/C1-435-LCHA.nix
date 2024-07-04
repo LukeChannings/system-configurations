@@ -39,6 +39,7 @@ let
     apps.wezterm.enable = true;
     apps.helix.enable = true;
     apps.vscode.enable = true;
+    apps.vscode.defaultVisualEditor.enable = true;
     apps.chromium.enable = true;
 
     fonts.enable = true;

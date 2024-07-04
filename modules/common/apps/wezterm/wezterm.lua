@@ -52,8 +52,8 @@ return {
   font_size = 15,
   window_decorations = "RESIZE",
   color_scheme = color_scheme_name,
-  initial_cols = 80,
-  initial_rows = 30,
+  initial_cols = 100,
+  initial_rows = 40,
 
   window_frame = {
     active_titlebar_bg = color_scheme.background,
@@ -61,10 +61,10 @@ return {
   },
 
   window_padding = {
-    left = 15,
-    right = 15,
-    top = 10,
-    bottom = 10,
+    left = "1cell",
+    right = "1cell",
+    top = "0.5cell",
+    bottom = "0.5cell",
   },
 
   skip_close_confirmation_for_processes_named = {

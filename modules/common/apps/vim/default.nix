@@ -1,5 +1,8 @@
 {lib, config, pkgs, ...}:
 {
+
+  options.apps.vim.enable = lib.mkEnableOption "Vim";
+
   config = lib.mkIf config.apps.vim.enable {
     home-manager.users.${config.user} = {
       programs.vim = {

@@ -5,17 +5,26 @@
   ...
 }:
 {
+  options.apps.vscode = {
+    enable = lib.mkEnableOption "Visual Studio Code";
+    defaultVisualEditor.enable = lib.mkEnableOption "Set as default visual editor";
+  };
+
   config = lib.mkIf config.apps.vscode.enable {
     home-manager.users.${config.user} =
       let
         vscode = pkgs.vscodium;
       in
       {
-        home.packages = [
-          (pkgs.writeShellScriptBin "code" ''
-            ${vscode}/Applications/VSCodium.app/Contents/MacOS/Electron $@
-          '')
-        ];
+        home = {
+          packages = [
+            (pkgs.writeShellScriptBin "code" ''
+              ${vscode}/Applications/VSCodium.app/Contents/MacOS/Electron $@
+            '')
+          ];
+
+          sessionVariables = lib.mkIf config.apps.vscode.defaultVisualEditor.enable { VISUAL = "code"; };
+        };
 
         programs.vscode = {
           enable = true;

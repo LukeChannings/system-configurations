@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   options.shell = {
     defaultShell = lib.mkOption {
       type = lib.types.str;
@@ -13,45 +19,50 @@
     };
   };
 
-  config = let
-    homeConfig = {
-      packages = with pkgs; [
-        # nice admin tools
-        lsd
-        tree
-        ripgrep
+  config =
+    let
+      homeConfig = {
+        packages = with pkgs; [
+          # nice admin tools
+          lsd
+          tree
+          ripgrep
 
-        # indispensible dev tools
-        nodePackages_latest.http-server
-        dig
-        jq
-        curl
-        devenv
+          # indispensible dev tools
+          nodePackages_latest.http-server
+          dig
+          jq
+          curl
+          devenv
 
-        # misc
-        chafa # imgcat / sizzle CLI that works well with Wezterm
+          # misc
+          chafa # imgcat / sizzle CLI that works well with Wezterm
 
-        cloudflared
-      ];
+          cloudflared
+        ];
 
-      shellAliases = {
-        ls = "lsd";
-        mkcd = "mkdir -p $argv[1] && cd ";
-        tree = "tree --noreport";
-        rg = "ripgrep";
-        edit = "$EDITOR .";
-        nixedit = "cd ~/.nix-config; $editor .";
-        rebuild = "darwin-rebuild switch --flake ~/.nix-config";
+        shellAliases = {
+          ls = "lsd";
+          mkcd = "mkdir -p $1 && cd ";
+          gitco = "git checkout $1";
+          tree = "tree --noreport";
+          rg = "ripgrep";
+          edit = "$VISUAL .";
+          nixedit = "$VISUAL ${config.configurationPath}";
+          rebuild = "${
+            if pkgs.stdenv.isDarwin then "darwin" else "nixos"
+          }-rebuild --flake ${config.configurationPath} $argv";
+        };
+      };
+    in
+    {
+      users.users.${config.user}.shell = pkgs.${config.shell.defaultShell};
+
+      home-manager.users.${config.user} = {
+        home = homeConfig;
+        xdg.enable = true;
       };
     };
-  in {
-    users.users.${config.user}.shell = pkgs.${config.shell.defaultShell};
-
-    home-manager.users.${config.user} = {
-      home = homeConfig;
-      xdg.enable = true;
-    };
-  };
 
   imports = [
     ./fish
