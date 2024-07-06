@@ -1,4 +1,10 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
 
   options.apps.helix.enable = lib.mkEnableOption "Helix Editor";
 
@@ -20,7 +26,23 @@
               select = "underline";
             };
 
-            file-picker = { hidden = false; };
+            file-picker = {
+              hidden = false;
+            };
+          };
+
+          keys.normal = {
+            A-up = [
+              "extend_to_line_bounds"
+              "delete_selection"
+              "move_line_up"
+              "paste_before"
+            ];
+            A-down = [
+              "extend_to_line_bounds"
+              "delete_selection"
+              "paste_after"
+            ];
           };
         };
 
