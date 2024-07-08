@@ -26,6 +26,7 @@
   "search.quickOpen.history.filterSortOrder": "recency",
   "nix.enableLanguageServer": true,
   "extensions.experimental.supportWorkspaceExtensions": true,
+  "git.openRepositoryInParentFolders": "never",
   "[markdown]": {
     "editor.wordWrap": "on"
   }

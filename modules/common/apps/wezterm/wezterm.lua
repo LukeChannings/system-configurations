@@ -39,6 +39,7 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   send_composed_key_when_left_alt_is_pressed = true,
   send_composed_key_when_right_alt_is_pressed = true,
+  quit_when_all_windows_are_closed = false,
   use_fancy_tab_bar = true,
   font = wezterm.font_with_fallback({
     {
