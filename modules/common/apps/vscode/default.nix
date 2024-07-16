@@ -61,6 +61,7 @@
             "gitlens.showWelcomeOnInstall" = false;
             "gitlens.showWhatsNewAfterUpgrades" = false;
             "gitlens.plusFeatures.enabled" = false;
+            "git.openRepositoryInParentFolders" = "never";
             "[markdown]" = {
               "editor.wordWrap" = "on";
             };

@@ -67,6 +67,7 @@ inputs.darwin.lib.darwinSystem {
           jetbrains.idea-ultimate
           zoom-us
           slack
+          adrs
         ];
 
         config.home-manager.users.${config.user} =
