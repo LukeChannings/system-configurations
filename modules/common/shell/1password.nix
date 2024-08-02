@@ -21,7 +21,6 @@
       plugins = with pkgs; [
         gh
         argocd
-        awscli2
       ];
     };
 

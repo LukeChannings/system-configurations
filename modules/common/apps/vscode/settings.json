@@ -18,9 +18,11 @@
   "explorer.confirmDelete": false,
   "extensions.autoCheckUpdates": false,
   "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
   "gitlens.plusFeatures.enabled": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.terminal.overrideGitEditor": false,
   "notebook.markup.fontSize": 14,
   "redhat.telemetry.enabled": false,
   "search.quickOpen.history.filterSortOrder": "recency",
@@ -32,6 +34,8 @@
   "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.editor.empty.hint": "hidden",
   "workbench.startupEditor": "none",
-  "git.openRepositoryInParentFolders": "never",
-  "gitlens.terminal.overrideGitEditor": false
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
+  "cypressHelper.enableCommandReferenceProvider": false
 }
